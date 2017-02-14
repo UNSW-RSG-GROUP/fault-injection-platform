@@ -1,0 +1,11 @@
+NET "clk_n" LOC = H9;
+NET "clk_n" IOSTANDARD = LVDS_25;
+NET "clk_n" DIFF_TERM = "TRUE";
+NET "clk_p" LOC = J9;
+NET "clk_p" IOSTANDARD = LVDS_25;
+NET "clk_p" DIFF_TERM = "TRUE";
+
+NET "rst" LOC = H10;
+
+NET "uart_tx" LOC = J25;
+NET "uart_rx" LOC = J24;

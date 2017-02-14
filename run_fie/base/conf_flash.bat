@@ -1,0 +1,1 @@
+impact -batch conf_flash.cmd

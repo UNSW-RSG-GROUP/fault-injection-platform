@@ -1,0 +1,44 @@
+08:15:36 **** Auto Build of configuration Debug for project fip ****
+make all 
+'Building file: ../src/coms.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../fip_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/coms.d" -MT"src/coms.d" -o "src/coms.o" "../src/coms.c"
+'Finished building: ../src/coms.c'
+' '
+'Building file: ../src/fault_injection.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../fip_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/fault_injection.d" -MT"src/fault_injection.d" -o "src/fault_injection.o" "../src/fault_injection.c"
+'Finished building: ../src/fault_injection.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../fip_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: fip.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../fip_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "fip.elf"  ./src/coms.o ./src/fault_injection.o ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: fip.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size fip.elf  |tee "fip.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22656	   2844	   2252	  27752	   6c68	fip.elf
+'Finished building: fip.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck fip.elf -hw ../../mb_sys_hw_platform/system.xml -pe microblaze_0  |tee "fip.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../mb_sys_hw_platform/system.xml -pe microblaze_0
+fip.elf 
+
+ELF file	: fip.elf
+elfcheck passed.
+'Finished building: fip.elf.elfcheck'
+' '
+
+08:15:38 Build Finished (took 2s.295ms)
+
